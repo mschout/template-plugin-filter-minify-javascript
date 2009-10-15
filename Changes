@@ -1,0 +1,6 @@
+Revision history for Perl extension Template::Plugin::Filter::Minify::JavaScript.
+
+0.01  Thu Oct 15 13:22:55 2009
+	- original version; created by h2xs 1.23 with options
+		-n Template::Plugin::Filter::Minify::JavaScript -X
+
