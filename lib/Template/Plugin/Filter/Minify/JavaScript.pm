@@ -1,87 +1,90 @@
 package Template::Plugin::Filter::Minify::JavaScript;
 
-use 5.010000;
+use 5.006;
 use strict;
-use warnings;
+use base 'Template::Plugin::Filter';
+use JavaScript::Minifier;
 
-require Exporter;
-use AutoLoader qw(AUTOLOAD);
+our $VERSION = '0.90';
 
-our @ISA = qw(Exporter);
+sub init {
+    my $self = shift;
 
-# Items to export into callers namespace by default. Note: do not export
-# names by default without a very good reason. Use EXPORT_OK instead.
-# Do not simply export all your public functions/methods/constants.
+    $self->install_filter('minify_js');
 
-# This allows declaration	use Template::Plugin::Filter::Minify::JavaScript ':all';
-# If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
-# will save memory.
-our %EXPORT_TAGS = ( 'all' => [ qw(
-	
-) ] );
+    return $self;
+}
 
-our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
+sub filter {
+    my ($self, $text) = @_;
 
-our @EXPORT = qw(
-	
-);
+    $text = JavaScript::Minifier::minify(input => $text);
 
-our $VERSION = '0.01';
-
-
-# Preloaded methods go here.
-
-# Autoload methods go after =cut, and are processed by the autosplit program.
+    return $text;
+}
 
 1;
-__END__
-# Below is stub documentation for your module. You'd better edit it!
 
 =head1 NAME
 
-Template::Plugin::Filter::Minify::JavaScript - Perl extension for blah blah blah
+Template::Plugin::Filter::Minify::JavaScript - JavaScript::Minifier filter for Template Toolkit
 
 =head1 SYNOPSIS
 
-  use Template::Plugin::Filter::Minify::JavaScript;
-  blah blah blah
+  [% USE Filter.Minify.JavaScript %]
+
+  [% FILTER minify_js %]
+    $(document).ready(
+        function() {
+            $('body').append('<div>Hello World!</div>');
+        }
+    );
+  [% END %]
 
 =head1 DESCRIPTION
 
-Stub documentation for Template::Plugin::Filter::Minify::JavaScript, created by h2xs. It looks like the
-author of the extension was negligent enough to leave the stub
-unedited.
+This module is a Template Toolkit filter, which uses JavaScript::Minifier to
+compress javascript code from filtered content during template processing.
 
-Blah blah blah.
+=head1 SOURCE
 
-=head2 EXPORT
+You can contribute or fork this project via github:
 
-None by default.
+http://github.com/mschout/template-plugin-filter-minify-javascript/tree/master
 
+ git clone git://github.com/mschout/template-plugin-filter-minify-javascript.git
 
+=head1 BUGS
 
-=head1 SEE ALSO
-
-Mention other useful documentation such as the documentation of
-related modules or operating system documentation (such as man pages
-in UNIX), or any relevant external documentation such as RFCs or
-standards.
-
-If you have a mailing list set up for your module, mention it here.
-
-If you have a web site set up for your module, mention it here.
+Please report any bugs or feature requests to
+bug-template-plugin-filter-minify-javascript@rt.cpan.org, or through the web
+interface at http://rt.cpan.org/
 
 =head1 AUTHOR
 
-Michael Schout, E<lt>mschout@E<gt>
+Michael Schout E<lt>mschout@cpan.orgE<gt>
 
-=head1 COPYRIGHT AND LICENSE
+=head1 COPYRIGHT & LICENSE
 
-Copyright (C) 2009 by Michael Schout
+Copyright 2009 Michael Schout.
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.10.0 or,
-at your option, any later version of Perl 5 you may have available.
+This program is free software; you can redistribute it and/or
+modify it under the terms of either:
 
+=over 4
 
-=cut
+=item *
+
+the GNU General Public License as published by the Free Software Foundation;
+either version 1, or (at your option) any later version, or
+
+=item *
+
+the Artistic License version 2.0.
+
+=back
+
+=head1 SEE ALSO
+
+L<JavaScript::Minifer>, L<Template::Plugin::Filter>, L<Template>
+
