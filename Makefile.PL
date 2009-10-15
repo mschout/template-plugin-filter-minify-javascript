@@ -1,6 +1,7 @@
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
+    (MM->can('signature_target') ? (SIGN => 1) : ()),
     NAME              => 'Template::Plugin::Filter::Minify::JavaScript',
     VERSION_FROM      => 'lib/Template/Plugin/Filter/Minify/JavaScript.pm',
     PREREQ_PM         => {
