@@ -3,6 +3,10 @@ Revision history for Template::Plugin::Filter::Minify::JavaScript
 {{$NEXT}}
     - use Dist::Zilla
 
+0.92  Fri Nov 13 2009
+    - disable signature test unless TEST_SIGNATURE is enabled, otherwise test
+      fails if keyserver is unreachable.
+
 0.91  Tue Oct 26 2009
     - add signature test
 
