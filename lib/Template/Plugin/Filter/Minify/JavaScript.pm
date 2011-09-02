@@ -53,5 +53,5 @@ compress javascript code from filtered content during template processing.
 
 =head1 SEE ALSO
 
-L<JavaScript::Minifer>, L<Template::Plugin::Filter>, L<Template>
+L<JavaScript::Minifier>, L<Template::Plugin::Filter>, L<Template>
 
