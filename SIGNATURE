@@ -1,0 +1,37 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.68.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 2090a9bcee13ebe95e12b6b584c065253fca6318 Changes
+SHA1 4fd8ebb0b76e79683f3cace70017ceb8c81331b2 LICENSE
+SHA1 9e02974f4927de9423cb4a282c499e9bb88dcd62 MANIFEST
+SHA1 978bf700a17bb9b016c88df711df17405e7e6f43 MANIFEST.bak
+SHA1 d3ef21d3a3f4a334a74d90aff63f80c518826d17 META.yml
+SHA1 2f059855f43b2155065d23b2968ac9b7a1cbd8f1 Makefile.PL
+SHA1 2c9efa3bd36c9cbc11a3cea589447d79040b05db README
+SHA1 1226ff8b4c6e6cda5a95bce724b7c38db77a3ad3 dist.ini
+SHA1 0756d6408ea6f185a46e4ed29534345effa2747f lib/Template/Plugin/Filter/Minify/JavaScript.pm
+SHA1 0e8971db8834c45cd40f02ea3cd7efcc34634b2b t/compile.t
+SHA1 a636a9ddfe38515fd8d58be19dda98b86196d2a2 t/minify.t
+SHA1 9433c240fe590bc404ab68ff63984df763e347ed t/release-pod-coverage.t
+SHA1 b30cbdfaf935017c4568c0c91b242438cb87786e t/release-pod-syntax.t
+SHA1 61cea839dd94aaaeb301ccac9b83cde4c5c91b42 t/signature.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iEYEARECAAYFAk5hUSAACgkQ+CqvSzp9LOz78wCeNTgOu+wsLoFCG+Eam2svMRYO
+fKgAn2FJZvEAU66Rm2wDLJzWsk+dJhqn
+=Va69
+-----END PGP SIGNATURE-----
