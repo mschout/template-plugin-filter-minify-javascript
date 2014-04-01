@@ -1,6 +1,7 @@
 Revision history for Template::Plugin::Filter::Minify::JavaScript
 
 {{$NEXT}}
+    - remove Module::Signature requirement
 
 0.93  2011-09-02
     - use Dist::Zilla
